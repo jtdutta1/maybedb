@@ -1,4 +1,4 @@
-use crate::db::types::{Datatype, ColumnDef, Table, Database, DatabaseRegistry};
+use crate::db::types::*;
 
 // table ops
 fn create_table(
@@ -64,7 +64,9 @@ fn insert_into_table(
 //     table_name: String,
 //     cols: String,
 //     conditions: Vec<Condition>
-// )
+// ) -> Result<Vec<Row>, String> {
+
+// }
 
 // database ops
 fn create_db(

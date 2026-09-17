@@ -182,6 +182,10 @@ impl Table {
         }
             true
     }
+
+    // pub fn get_rows(&self, constraint: &Vec<String>) -> Result<Option<Vec<Row>>, String> {
+
+    // }
 }
 
 #[derive(PartialEq)]

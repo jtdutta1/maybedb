@@ -1,2 +1,2 @@
 # maybedb
-A lightweight database for learning
+A lightweight in-memory database for learning
