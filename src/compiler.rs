@@ -1,3 +1,5 @@
+use constcat::concat_slices;
+
 pub mod lexer;
 pub mod tokenizer;
 pub mod granular_tokenizer;
@@ -18,13 +20,22 @@ const KEYWORDS: &[&str] = &[
 ];
 
 // define operators
-const OPERATORS: &[&str] = &[
-    // logical
-    ">", "<", "=", ">=", "<=", "!=", "AND", "OR", "NOT",
-    // miscellaneous
-    "*",
-    // containers
-    "(", ")", 
-    // Arithmetic
-    "ADD(", "SUB(", "MUL(", "DIV(",
+const LOGICAL_OPERATOR: &[&str] = &[
+    ">", "<", "=", ">=", "<=", "!=", "AND", "OR", "NOT"
 ];
+
+const CONTAINER_OPERATOR: &[&str] = &[
+    "(", ")"
+];
+
+const ARITHMETIC_OPERATOR: &[&str] = &[
+    "ADD(", "SUB(", "MUL(", "DIV("
+];
+
+const MISC_OPERATOR: &[&str] = &[
+    "*"
+];
+
+const OPERATORS: &[&str] = concat_slices!(
+    [&str]: LOGICAL_OPERATOR, CONTAINER_OPERATOR, ARITHMETIC_OPERATOR, MISC_OPERATOR
+);
